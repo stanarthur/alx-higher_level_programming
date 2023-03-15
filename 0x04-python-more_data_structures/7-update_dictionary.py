@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-def print_sorted_dictionary(a_dictionary):
+def update_dictionary(a_dictionary, key, value):
     """
-    Print a dictionary ordered by key
-    sorted in alphabetical order
+    a function that replaces or adds key/value in a dictionary.
+    key argument will be always a string
+    value argument will be any type
     """
-    for key in sorted(a_dictionary.keys()):
-        print("{}: {}".format(key, a_dictionary[key]))
+    if key in a_dictionary:
+        a_dictionary[key] = value
+    else:
+        a_dictionary[key] = value
+    return a_dictionary
