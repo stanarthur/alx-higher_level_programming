@@ -3,7 +3,6 @@
 """Solves the N-queens puzzle.
 
 Determines all possible solutions to placing N
-
 N non-attacking queens on an NxN chessboard.
 
 Example:
@@ -91,7 +90,7 @@ def xout(board, row, col):
         if c >= len(board):
             break
         board[r][c] = "x"
-	c += 1
+        c += 1
     # X out all spots diagonally down to the left
     c = col - 1
     for r in range(row + 1, len(board)):
@@ -103,6 +102,7 @@ def xout(board, row, col):
 
 def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
+
     Args:
         board (list): The current working chessboard.
         row (int): The current working row.
