@@ -21,8 +21,8 @@ This module defines an integer addition function ``add_integer(a, b=98)``.
 Usage
 =====
 
-``add_integer(...)``` returns the addition of its two arguments. For numbers,
-that value is equivalent to using the ``+`` operator.
+``add_integer(...)``` will  return the addition of its two arguments. For numbers,
+that value is the same as using the ``+`` operator.
 
 ::
 
@@ -42,7 +42,7 @@ The function also works with floating-point values.
     >>> add_integer(2.0, 3.0)
     5
 
-Note that floats are casted to ints before addition is performed.
+Note that floats are changed into (ints) before addition is performed.
 
 ::
 
@@ -54,7 +54,7 @@ Note that floats are casted to ints before addition is performed.
     >>> add_integer(-2.9, -0.2)
     -2
 
-Floating and non-floating point values can be combined.
+Floating and non-floating point values can be added.
 
 ::
 
@@ -64,7 +64,7 @@ Floating and non-floating point values can be combined.
 The second argument is optional - by default, it is 98.
 
 ::
-
+7
     >>> add_integer(2)
     100
 
@@ -82,7 +82,7 @@ If either argument is a non-integer and non-float, a TypeError is raised:
 
 ::
 
-    >>> add_integer(2, "hello")
+    >>> add_integer(7, "hi")
     Traceback (most recent call last):
     TypeError: b must be an integer
 
@@ -103,11 +103,11 @@ printed for the first argument.
 
 ::
 
-    >>> add_integer("hello", "there")
+    >>> add_integer("Good", "morning")
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-The function will fail if infinity is provided.
+The function will fail if infinity is given.
 
 ::
 
@@ -121,6 +121,8 @@ The function will fail if infinity is provided.
     >>> add_integer(2, float('inf'))
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
+Normally, float can be converted to int with int(), but inf cannot be
+converted to int.
 
 And again with NaN numbers.
 
@@ -129,6 +131,8 @@ And again with NaN numbers.
     >>> add_integer(float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
+NaN represents Not A Number. As stated, it doesnt have any real
+number, hence its call-back error.
 
 ::
 
